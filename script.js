@@ -49,7 +49,8 @@ function getUnlockedProducers(data) {
   // use the Array.prototype.filter() method
   // filter through the data.producers property, and return an array with only the producers whose
   // unlocked property is true
-  return data.producers.filter(producer => producer.unlocked === true);
+   return data.producers.filter((producer) => producer.unlocked === true);
+   
 }
 
  
@@ -169,16 +170,16 @@ function tick(data) {
 }
 
 // Event Listeners
-bigCoffee.addEventListener('click', function() {
+bigCoffee.addEventListener('click', function(){
   clickCoffee(data);
-});
+  })
 // add a 'click' event listener to the bigCoffee element (that you referenced above)
 // the event listener should call the clickCoffee function, and pass in the global data object
 
 // add a 'click' event listener to the element (referenced at the top of the file)
 // the event listener should call the buyButtonClick function and pass it the event, and the global data object
-bigCoffee.addEventListener('click', function(event) {
+producerContainer.addEventListener('click', function(event){
   buyButtonClick(event, data);
-});
+})
 // You do not need to edit this last line. This simple runs your tick function every 1000ms, or 1s
 setInterval(() => tick(data), 1000);
